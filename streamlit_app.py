@@ -1,7 +1,8 @@
 import streamlit as st 
 
-col1, col2 = st.columns(2)
+
 st.set_page_config(layout="wide")
+col1, col2 = st.columns(2)
 st.title(" Cryptarithmetic puzzles 🧩 ")
 container = st.container()
 
@@ -14,7 +15,7 @@ with col1:
 
 
 with col2:
-   st.header("A dog")
+   st.he("A dog")
 
 
 
