@@ -46,7 +46,7 @@ user_variables = extract(user_input)
 domains = {}
 
 for variable in user_variables:
-    domains[variable] = range(0,10)
+    domains[variable] =list(range(0,10))
 
 
 
