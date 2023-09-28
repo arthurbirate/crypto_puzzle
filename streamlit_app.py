@@ -18,13 +18,16 @@ new_input = re.split(r'\s+', user_input)
 # Extract unique letters from the input
 def extract(input_user):
     letters = set()
+    to_tuple = tuple(letters)
     for word in new_input:
         for char in word:
             if char.isalpha():
                 letters.add(char)
-    return letters
+    return to_tuple
 
 user_variables = extract(user_input)
+
+st.write(user_variables)
 
 # Define domains for variables (initially 0-9 for all)
 domains = {variable: list(range(0, 10)) for variable in user_variables}
@@ -36,30 +39,25 @@ for variable in user_variables:
             domains[variable] = list(range(1, 10))
 
 # Define constraints
-def constraint_unique(variables, values):
-    return len(values) == len(set(values))  # Check for unique values
+# def constraint_unique(variables, values):
+#     return len(values) == len(set(values))  # Check for unique values
 
-def constraint_add(variables, values):
+# def constraint_add(variables, values):
 
-   last_element = int(new_input[-1])  # Get the last element of new_input as an integer
-    
-    # Convert the values to a list of digits and sum them
-   digit_sum = sum(int(digit) for value in values for digit in str(value))
-   return digit_sum == last_element 
 
     
 
 
 
 
-constraints = [
-    (user_variables, constraint_unique),
-    (user_variables, constraint_add),
-]
+# constraints = [
+#     (user_variables, constraint_unique),
+#     (user_variables, constraint_add),
+# ]
 
-problem = CspProblem(user_variables, domains, constraints)
+# problem = CspProblem(user_variables, domains, constraints)
 
-solutions = backtrack(problem)
+# solutions = backtrack(problem)
 
-for solution in solutions:
-    st.write(solution)
+# for solution in solutions:
+#     st.write(solution)
