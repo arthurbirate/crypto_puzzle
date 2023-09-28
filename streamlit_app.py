@@ -31,6 +31,8 @@ for variable in user_variables:
     for word in new_input:
         if variable == word[0]:
            domains[variable] = list(range(1, 10))
+        else:
+           domains[variable] = list(range(0, 10))
 
 st.write(domains) 
     
