@@ -1,4 +1,5 @@
 import streamlit as st 
+import re
 st.set_page_config(layout="centered")
 
 
@@ -12,6 +13,7 @@ container.write(" cryptarithmetic puzzle is a mathematical exercise where the di
 container.write("For example: ")
 user_input = st.text_input("Enter Your Puzzles ")
 
+new_input = re.split(r'\s+', user_input)
 
 # letters = []
 
@@ -45,12 +47,36 @@ user_variables = extract(user_input)
 
 domains = {}
 
-for variable in user_variables:
-    domains[variable] =list(range(0,10))
+# for variable in user_variables:
+#     if 
+#     domains[variable] =list(range(0,10))
+    
+
+
+st.write(new_input)
+# def constraint_unique(variables, values):
+#     return len(values) == len(set(values))  # remove repeated values and count
+
+# def constraint_add(variables, values):
+#     factor = int(str(values[1]) + str(values[3]) + str(values[5]))
+#     result = int(str(values[0]) + str(values[5]) + str(values[2]) + str(values[4]))
+#     return (factor + factor) == result
+
+# constraints = [
+#     (('F', 'T', 'U', 'W', 'R', 'O'), constraint_unique),
+#     (('F', 'T', 'U', 'W', 'R', 'O'), constraint_add),
+# ]
+
+# problem = CspProblem(variables, domains, constraints)
+
+# output = backtrack(problem)
+# print('\nSolutions:', output)
 
 
 
-st.write(domains)
+
+
+# st.write(domains)
 
 
 
