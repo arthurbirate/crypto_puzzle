@@ -39,23 +39,22 @@ for variable in user_variables:
 def constraint_unique(variables, values):
     return len(values) == len(set(values))  # Check for unique values
 
-# def constraint_add(variables, values):
-#     variable_to_value = {var: val for var, val in zip(variables, values)}
+def constraint_add(variables, values):
 
-#     total = 0
-#     current_number = ''
-#     for item in new_input:
-#         if item.isalpha():
-#             current_number += str(variable_to_value[item])
-#         else:
-#             total += int(current_number)
-#             current_number = ''
-#     total += int(current_number)
-#     return total
+   last_element = int(new_input[-1])  # Get the last element of new_input as an integer
+    
+    # Convert the values to a list of digits and sum them
+   digit_sum = sum(int(digit) for value in values for digit in str(value))
+   return digit_sum == last_element 
+
+    
+
+
+
 
 constraints = [
     (user_variables, constraint_unique),
-    # (user_variables, constraint_add),
+    (user_variables, constraint_add),
 ]
 
 problem = CspProblem(user_variables, domains, constraints)
