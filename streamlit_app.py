@@ -1,6 +1,8 @@
 import streamlit as st 
 
 
+
+st.set_page_config(layout="wide")
 st.title(" Cryptarithmetic puzzles 🧩 ")
 
 st.text(" cryptarithmetic puzzle is a mathematical exercise where the digits of some numbers are represented by letters (or symbols).")
