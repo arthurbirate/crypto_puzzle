@@ -28,11 +28,13 @@ user_variables = extract(user_input)
 domains = {}
 
 for word in new_input:
-    for variable in user_variables:
-        if word.startswith(variable):
-            domains[variable] = list(range(1, 10))
-        if not word.startswith(variable):
-            domains[variable] = list(range(0, 10))
+    st.write(word)
+    
+    # for variable in user_variables:
+    #     if word.startswith(variable):
+    #         domains[variable] = list(range(1, 10))
+    #     if not word.startswith(variable):
+    #         domains[variable] = list(range(0, 10))
        
     
     
@@ -61,7 +63,7 @@ for word in new_input:
 
 
 
-st.write(domains)
+
 
 
 
