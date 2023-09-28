@@ -49,7 +49,7 @@ domains = {}
 
 for word in new_input:
   for variable in user_variables:
-      if variable == word[0]:
+      if word.startswith(variable):
         domains[variable] =list(range(1,10))
       else:
         domains[variable] =list(range(0,10))
