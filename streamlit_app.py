@@ -1,6 +1,6 @@
 
 import streamlit as st 
-from simpleai.search import CspProblem, backtrack
+
 import re
 st.set_page_config(layout="centered")
 
@@ -77,6 +77,7 @@ constraints = [
     (user_input, constraint_unique),
     (user_input, constraint_add),
 ]
+from simpleai.search import CspProblem, backtrack
 
 problem = CspProblem(user_input, domains, constraints)
 
