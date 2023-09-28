@@ -1,5 +1,6 @@
 import streamlit as st 
 st.set_page_config(layout="wide")
+row_input = st.columns((2,1,2,1))
 
 st.title(" Cryptarithmetic puzzles 🧩 ")
 st.divider()
@@ -11,9 +12,9 @@ container.write(" cryptarithmetic puzzle is a mathematical exercise where the di
 container.write("For example: ")
 
 
+with row_input[0]:
 
-
-user_input = st.text_input("Enter Your Puzzle ")
+  user_input = st.text_input("Enter Your Puzzle ")
 
 
 
