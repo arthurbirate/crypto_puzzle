@@ -1,6 +1,6 @@
-from simpleai.search import CspProblem, backtrack
 import streamlit as st
 import re
+from simpleai.search import CspProblem, backtrack
 
 # Set Streamlit page config
 st.set_page_config(layout="centered")
