@@ -13,6 +13,23 @@ container.write("For example: ")
 user_input = st.text_input("Enter Your Puzzle ")
 
 
+def extract(input_user):
+    letters = []
+    set_letters = set(letters)
+    to_list = list(set_letters)
+    for char in input_user:
+        if char.isalpha():
+            letters.append(char)
+    
+    return to_list
+
+user_letters = extract(user_input)
+
+
+print(user_letters)
+
+
+
 
 
 
