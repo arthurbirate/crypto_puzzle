@@ -35,7 +35,6 @@ st.write(user_letters)
 
 
 
-# st.text(" ")
 
-# variable_1 = st.text_input("Enter variable")
+# st.text(" ")
 
