@@ -15,45 +15,24 @@ user_input = st.text_input("Enter Your Puzzles ")
 
 new_input = re.split(r'\s+', user_input)
 
-# letters = []
-
-# for char in user_input:
-#     if char.isalpha():
-#         letters.append(char)
 def extract(input_user):
-
     letters = set()
-
-    # to_set = set(letters)
-    
-    variables = input_user
-
-    for char in variables:
-        if char.isalpha():
-            letters.add(char)
-    
+    for word in new_input:
+        for char in word:
+            if char.isalpha():
+                letters.add(char)
     return letters
-     
-    # letters = []
-    # set_letters = set(letters)
-    # to_list = list(set_letters)
-    # for char in input_user:
-    #     if char.isalpha():
-    #         letters.append(char)
-    
-    # return to_list
 
 user_variables = extract(user_input)
 
 domains = {}
 
 for word in new_input:
-  for variable in user_variables:
-      if word.startswith(variable):
-        domains[variable] =list(range(1,10))
-      else:
-        domains[variable] =list(range(0,10))
-       
+    for variable in user_variables:
+        if word.startswith(variable):
+            domains[variable] = list(range(1, 10))
+        else:
+            domains[variable] = list(range(0, 10))
        
     
     
