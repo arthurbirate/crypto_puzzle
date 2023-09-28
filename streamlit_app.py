@@ -29,7 +29,7 @@ domains = {}
 
 for variable in user_variables:
     for word in new_input:
-        if word.startswith(variable):
+        if variable == word[0]:
             st.write(word,"Ok")
     
     
