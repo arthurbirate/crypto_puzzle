@@ -28,13 +28,13 @@ user_variables = extract(user_input)
 domains = {}
 
 for variable in user_variables:
-     domain_updated = False  # Flag to check if the domain has been updated
-     for word in new_input:
-        if variable == word[0] and not domain_updated:
+    domains[variable] = list(range(0, 10))
+
+# Update domains for variables found at the beginning of words to [1, 2, 3, 4, 5, 6, 7, 8, 9]
+for variable in user_variables:
+    for word in new_input:
+        if variable == word[0]:
             domains[variable] = list(range(1, 10))
-            domain_updated = True
-        else:
-            domains[variable] = list(range(0, 10))
           
 
 st.write(domains) 
