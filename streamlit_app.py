@@ -9,12 +9,12 @@ container.write(" cryptarithmetic puzzle is a mathematical exercise where the di
 
 container.write("For example: ")
 
-# with col1:
-#    st.text("A cat")
+with col1:
+   st.text("A cat")
 
 
-# with col2:
-#    st.text("A dog")
+with col2:
+   st.text("A dog")
 
 
 
