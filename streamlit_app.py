@@ -21,13 +21,13 @@ def extract(input_user):
         if char.isalpha():
             letters.append(char)
     
-    return letters
+    return to_list
 
 user_letters = extract(user_input)
 
 
-st.write(user_letters)
 
+print(user_letters)
 
 
 
