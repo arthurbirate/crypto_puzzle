@@ -67,5 +67,4 @@ problem = CspProblem(user_variables, domains, constraints)
 
 solutions = backtrack(problem)
 
-for solution in solutions:
-    st.write(solution)
+st.write(solutions)
