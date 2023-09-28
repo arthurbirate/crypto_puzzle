@@ -47,13 +47,19 @@ user_variables = extract(user_input)
 
 domains = {}
 
-# for variable in user_variables:
-#     if 
-#     domains[variable] =list(range(0,10))
+for word in new_input:
+  for variable in user_variables:
+      if variable == word[0]:
+        domains[variable] =list(range(1,10))
+      else:
+        domains[variable] =list(range(0,10))
+       
+       
+    
     
 
 
-st.write(new_input)
+# st.write(new_input)
 # def constraint_unique(variables, values):
 #     return len(values) == len(set(values))  # remove repeated values and count
 
@@ -76,7 +82,7 @@ st.write(new_input)
 
 
 
-# st.write(domains)
+st.write(domains)
 
 
 
