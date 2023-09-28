@@ -1,6 +1,7 @@
+from constraint import *
 import streamlit as st
 import re
-from constraint import *
+
 
 st.set_page_config(layout="centered")
 
