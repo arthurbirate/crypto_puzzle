@@ -2,6 +2,7 @@ import streamlit as st
 
 
 st.set_page_config(layout="wide")
+col1, col2 = st.columns(2)
 
 st.title(" Cryptarithmetic puzzles 🧩 ")
 st.divider()
@@ -11,7 +12,7 @@ container.write(" cryptarithmetic puzzle is a mathematical exercise where the di
 
 container.write("For example: ")
 
-col1, col2 = st.columns(2)
+
 
 
 with col1:
