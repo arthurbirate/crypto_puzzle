@@ -11,6 +11,14 @@ container.write(" cryptarithmetic puzzle is a mathematical exercise where the di
 
 container.write("For example: ")
 user_input = st.text_input("Enter Your Puzzles ")
+
+
+letters = []
+
+for char in user_input:
+    if char.isalpha():
+        letters.append(char)
+
 # def extract(input_user):
 #     letters = []
 #     set_letters = set(letters)
@@ -24,8 +32,8 @@ user_input = st.text_input("Enter Your Puzzles ")
 # user_letters = extract(user_input)
 
 
-
-st.write(user_input)
+print(letters)
+st.write(letters)
 
 
 
