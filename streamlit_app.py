@@ -41,12 +41,16 @@ def extract(input_user):
     
     # return to_list
 
-user_letters = extract(user_input)
+user_variables = extract(user_input)
+
+domains = {}
+
+for variable in user_variables:
+    domains[variable] = range(0,10)
 
 
-# print(letters)
-st.write(user_letters)
 
+st.write(domains)
 
 
 
