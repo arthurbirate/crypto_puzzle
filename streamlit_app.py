@@ -21,7 +21,7 @@ def extract(input_user):
         if char.isalpha():
             letters.append(char)
     
-    return to_list
+    return letters
 
 user_letters = extract(user_input)
 
