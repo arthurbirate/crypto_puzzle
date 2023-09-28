@@ -28,7 +28,7 @@ user_variables = extract(user_input)
 domains = {}
 
 for variable in user_variables:
-    for word in user_input:
+    for word in new_input:
         if word.startswith(variable):
             st.write(word,"Ok")
     
