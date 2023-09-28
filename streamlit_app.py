@@ -1,7 +1,6 @@
-from constraint import *
 import streamlit as st
 import re
-
+from simpleai.search import CspProblem, backtrack
 
 st.set_page_config(layout="centered")
 
@@ -16,7 +15,6 @@ user_input = st.text_input("Enter Your Puzzles ")
 
 new_input = re.split(r'\s+', user_input)
 
-
 def extract(input_user):
     letters = set()
     for word in new_input:
@@ -24,7 +22,6 @@ def extract(input_user):
             if char.isalpha():
                 letters.add(char)
     return letters
-
 
 user_variables = extract(user_input)
 
@@ -39,23 +36,29 @@ for variable in user_variables:
         if variable == word[0]:
             domains[variable] = list(range(1, 10))
 
-# Define constraints
-problem = Problem()
+# Define a constraint function
+def constraint_unique(*args):
+    return len(args) == len(set(args))  # Check if values are unique
 
-# Add variables and domains
-for variable, domain in domains.items():
-    problem.addVariable(variable, domain)
+# Create a CSP problem
+problem = CspProblem(user_variables, domains)
 
 # Define the equation as a constraint
-equation = "".join(new_input)
-problem.addConstraint(lambda *args: eval(equation, {var: val for var, val in zip(user_variables, args)}), user_variables)
+def constraint_equation(*args):
+    equation = "".join(new_input)
+    for var, val in zip(user_variables, args):
+        equation = equation.replace(var, str(val))
+    return eval(equation)
+
+problem.add_constraint(constraint_unique)
+problem.add_constraint(constraint_equation)
 
 # Solve the problem using backtracking
-solutions = problem.getSolutions()
+solutions = list(backtrack(problem))
 
 if solutions:
     st.write("Solutions:")
     for solution in solutions:
-        st.write({var: val for var, val in solution.items()})
+        st.write(solution)
 else:
     st.write("No solutions found.")
