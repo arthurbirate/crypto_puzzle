@@ -1,13 +1,9 @@
 import streamlit as st 
 
-[theme]
-primaryColor="#F63366"
-backgroundColor="#FFFFFF"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#262730"
-font="sans serif"
 
 st.title(" Cryptarithmetic puzzles 🧩 ")
+
+st.text(" cryptarithmetic puzzle is a mathematical exercise where the digits of some numbers are represented by letters (or symbols). Each letter represents a unique digit. The goal is to find the digits such that a given mathematical equation is verified:")
 
 # variable_1 = st.text_input("Enter variable")
 
