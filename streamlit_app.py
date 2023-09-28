@@ -1,5 +1,5 @@
 import streamlit as st 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="centered")
 row_input = st.columns((2,1,2,1))
 
 st.title(" Cryptarithmetic puzzles 🧩 ")
