@@ -3,7 +3,7 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
-buff, col, buff2 = st.beta_columns([1,6,1])
+buff, col, buff2 = st.beta_columns([1,3,1])
 st.title(" Cryptarithmetic puzzles 🧩 ")
 st.divider()
 container = st.container()
