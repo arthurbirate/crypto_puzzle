@@ -1,5 +1,8 @@
 import streamlit as st 
 
 
-variable_1 = st.text_input("Enter variable")
+
+st.markdown("# Cryptarithmetic puzzles")
+
+# variable_1 = st.text_input("Enter variable")
 
