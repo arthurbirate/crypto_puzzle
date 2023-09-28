@@ -27,7 +27,9 @@ def extract(input_user):
 
 user_variables = extract(user_input)
 
-st.write(user_variables)
+convert_to_tuple = tuple(user_variables)
+
+st.write(convert_to_tuple)
 
 # Define domains for variables (initially 0-9 for all)
 domains = {variable: list(range(0, 10)) for variable in user_variables}
