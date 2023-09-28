@@ -34,7 +34,7 @@ for variable in user_variables:
             domains[variable] = list(range(1, 10))
             domain_updated = True
         else:
-            domains.setdefault(variable, []).extend(list(range(0, 10)))
+            domains[variable] = list(range(0, 10))
           
 
 st.write(domains) 
