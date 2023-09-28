@@ -39,7 +39,7 @@ for variable in convert_to_tuple:
     for word in new_input:
         if variable == word[0]:
             domains[variable] = list(range(1, 10))
-st.write(domains)
+
 # Define constraints
 def constraint_unique(variables, values):
     return len(values) == len(set(values))  # Check for unique values
