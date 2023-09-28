@@ -41,25 +41,31 @@ for variable in convert_to_tuple:
             domains[variable] = list(range(1, 10))
 st.write(domains)
 # Define constraints
-# def constraint_unique(variables, values):
-#     return len(values) == len(set(values))  # Check for unique values
+def constraint_unique(variables, values):
+    return len(values) == len(set(values))  # Check for unique values
 
-# def constraint_add(variables, values):
+def constraint_add(variables, values):
+    # Get the last elements of words in new_input
+    last_elements = [word[-1] for word in new_input if len(word) > 0]
+
+    # Check if the sum of values for each variable matches the last element of words
+    for i, variable in enumerate(variables):
+        if sum(values[i] for i in range(len(values))) != int(last_elements[i]):
+            return False
+    return True
 
 
     
 
 
+constraints = [
+    (convert_to_tuple, constraint_unique),
+    (convert_to_tuple, constraint_add),
+]
 
+problem = CspProblem(user_variables, domains, constraints)
 
-# constraints = [
-#     (user_variables, constraint_unique),
-#     (user_variables, constraint_add),
-# ]
+solutions = backtrack(problem)
 
-# problem = CspProblem(user_variables, domains, constraints)
-
-# solutions = backtrack(problem)
-
-# for solution in solutions:
-#     st.write(solution)
+for solution in solutions:
+    st.write(solution)
