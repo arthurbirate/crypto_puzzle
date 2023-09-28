@@ -26,7 +26,7 @@ def extract(input_user):
 user_letters = extract(user_input)
 
 
-st.write(user_input)
+st.write(user_letters)
 
 
 
