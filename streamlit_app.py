@@ -21,6 +21,8 @@ user_input = st.text_input("Enter Your Puzzles ")
 def extract(input_user):
 
     letters = []
+
+    to_set = set(letters)
     
     variables = input_user
 
@@ -28,7 +30,7 @@ def extract(input_user):
         if char.isalpha():
             letters.append(char)
     
-    return letters
+    return to_set
      
     # letters = []
     # set_letters = set(letters)
