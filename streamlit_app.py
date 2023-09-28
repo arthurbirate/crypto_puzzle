@@ -30,8 +30,9 @@ domains = {}
 for variable in user_variables:
     for word in new_input:
         if variable == word[0]:
-            st.write(variable,"Ok")
-    
+           domains[variable] = list(range(1, 10))
+
+st.write(domains) 
     
     # for variable in user_variables:
     #     if word.startswith(variable):
