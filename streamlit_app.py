@@ -18,16 +18,14 @@ new_input = re.split(r'\s+', user_input)
 # Extract unique letters from the input
 def extract(input_user):
     letters = set()
-    to_tuple = tuple(letters)
+    
     for word in new_input:
         for char in word:
             if char.isalpha():
                 letters.add(char)
-    return to_tuple
+    return letters
 
 user_variables = extract(user_input)
-
-st.write(user_variables)
 
 # Define domains for variables (initially 0-9 for all)
 domains = {variable: list(range(0, 10)) for variable in user_variables}
