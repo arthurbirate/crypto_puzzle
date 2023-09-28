@@ -11,8 +11,13 @@ container.write(" cryptarithmetic puzzle is a mathematical exercise where the di
 
 container.write("For example: ")
 
+col1, col2 = st.columns(2)
 
-user_input = st.text_input("Enter Your Puzzl ")
+
+with col1:
+
+
+ user_input = st.text_input("Enter Your Puzzl ")
 
 
 
