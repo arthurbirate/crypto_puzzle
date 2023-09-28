@@ -46,14 +46,10 @@ def constraint_unique(variables, values):
 
 def constraint_add(variables, values):
     # Get the last elements of words in new_input
-    last_elements = [word[-1] for word in new_input if len(word) > 0]
-
-    # Check if the sum of values for each variable matches the last element of words
-    for i, variable in enumerate(variables):
-        if sum(values[i] for i in range(len(values))) != int(last_elements[i]):
-            return False
-    return True
-
+   
+    factor = int(str(values[0]) + str(values[1]) + str(values[1]))
+    result = int(str(values[2]) + str(values[3]) + str(values[2]) + str(values[4]))
+    return (factor + factor) == result
 
     
 
