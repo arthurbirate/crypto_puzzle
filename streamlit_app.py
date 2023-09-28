@@ -19,14 +19,15 @@ user_input = st.text_input("Enter Your Puzzles ")
 #     if char.isalpha():
 #         letters.append(char)
 def extract(input_user):
-    letters = []
-    set_letters = set(letters)
-    to_list = list(set_letters)
-    for char in input_user:
-        if char.isalpha():
-            letters.append(char)
+    return input_user
+    # letters = []
+    # set_letters = set(letters)
+    # to_list = list(set_letters)
+    # for char in input_user:
+    #     if char.isalpha():
+    #         letters.append(char)
     
-    return to_list
+    # return to_list
 
 user_letters = extract(user_input)
 
