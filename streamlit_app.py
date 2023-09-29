@@ -12,7 +12,7 @@ container = st.container()
 container.write("A cryptarithmetic puzzle is a mathematical exercise where the digits of some numbers are represented by letters (or symbols). Each letter represents a unique digit. The goal is to find the digits such that a given mathematical equation is verified.")
 container.write("For example:")
 
-formbtn = st.button("Form")
+# formbtn = st.button("Form")
 
 if "formbtn_state" not in st.session_state:
     st.session_state.formbtn_state = False
