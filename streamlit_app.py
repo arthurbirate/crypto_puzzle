@@ -43,24 +43,34 @@ for variable in convert_to_tuple:
 # Define constraints
 def constraint_unique(variables, values):
     return len(values) == len(set(values))  # Check for unique values
-
 def constraint_add(variables, values):
     # Create a dictionary to map variables to their assigned values
     value_dict = dict(zip(variables, values))
     
-    # Iterate through the words in new_input
-    word_values = []
-    for word in new_input:
-        word_value = 0
-        for char in word:
-            if char.isalpha():
-                # Convert the character to its corresponding assigned value
-                word_value = word_value * 10 + value_dict[char]
-        word_values.append(word_value)
+    # Extract the words from user_input
+    words = re.findall(r'\b\w+\b', user_input)
     
-    # Check if the sum of the first two words equals the third word
-    return word_values[0] + word_values[1] == word_values[2]
+    # Extract the first two words and the result word
+    word1, word2, result = words[0], words[1], words[2]
+    
+    # Calculate the numerical values of the first two words and the result word
+    value_word1 = 0
+    for char in word1:
+        if char.isalpha():
+            value_word1 = value_word1 * 10 + value_dict[char]
 
+    value_word2 = 0
+    for char in word2:
+        if char.isalpha():
+            value_word2 = value_word2 * 10 + value_dict[char]
+
+    value_result = 0
+    for char in result:
+        if char.isalpha():
+            value_result = value_result * 10 + value_dict[char]
+
+    # Check if the sum of the first two words equals the third word
+    return value_word1 + value_word2 == value_result
     
 
 
