@@ -12,6 +12,7 @@ container = st.container()
 container.write("A cryptarithmetic puzzle is a mathematical exercise where the digits of some numbers are represented by letters (or symbols). Each letter represents a unique digit. The goal is to find the digits such that a given mathematical equation is verified.")
 container.write("For example:")
 user_input = st.text_input("Enter Your Puzzle")
+st.button("Submit", type="primary")
 
 new_input = re.split(r'\s+', user_input)
 
