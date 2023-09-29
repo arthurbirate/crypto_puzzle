@@ -12,7 +12,7 @@ container = st.container()
 container.write("A cryptarithmetic puzzle is a mathematical exercise where the digits of some numbers are represented by letters (or symbols). Each letter represents a unique digit. The goal is to find the digits such that a given mathematical equation is verified.")
 container.write("For example:")
 
-formbtn = st.button("Form")
+formbtn = st.button("Try out your puzzle")
 
 if "formbtn_state" not in st.session_state:
     st.session_state.formbtn_state = False
@@ -22,8 +22,8 @@ if formbtn or st.session_state.formbtn_state:
             
         user_input = st.text_input("Enter Your Puzzle")
         new_input = re.split(r'\s+', user_input)
-        
-        submit_form = st.form_submit_button(label="Register", help="Click to register!")
+
+        submit_form = st.form_submit_button(label="launch", help="Click to submit !")
 
         st.write(submit_form)
 
