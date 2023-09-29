@@ -11,10 +11,19 @@ container = st.container()
 # Explanation and user input
 container.write("A cryptarithmetic puzzle is a mathematical exercise where the digits of some numbers are represented by letters (or symbols). Each letter represents a unique digit. The goal is to find the digits such that a given mathematical equation is verified.")
 container.write("For example:")
-user_input = st.text_input("Enter Your Puzzle")
-st.button("Submit", type="primary")
 
-new_input = re.split(r'\s+', user_input)
+formbtn = st.button("Form")
+
+if "formbtn_state" not in st.session_state:
+    st.session_state.formbtn_state = False
+if formbtn or st.session_state.formbtn_state:
+    st.session_state.formbtn_state = True
+    with st.form(key = 'user_info'):
+        user_input = st.text_input("Enter Your Puzzle")
+        new_input = re.split(r'\s+', user_input)
+        submit_form = st.form_submit_button(label="Register", help="Click to register!")
+
+        st.write(submit_form)
 
 # Extract unique letters from the input
 def extract(input_user):
