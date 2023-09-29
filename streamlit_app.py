@@ -45,11 +45,21 @@ def constraint_unique(variables, values):
     return len(values) == len(set(values))  # Check for unique values
 
 def constraint_add(variables, values):
-    # Get the last elements of words in new_input
-   
-    factor = int(str(values[0]) + str(values[1]) + str(values[1]))
-    result = int(str(values[2]) + str(values[3]) + str(values[2]) + str(values[4]))
-    return (factor + factor) == result
+    # Create a dictionary to map variables to their assigned values
+    value_dict = dict(zip(variables, values))
+    
+    # Iterate through the words in new_input
+    word_values = []
+    for word in new_input:
+        word_value = 0
+        for char in word:
+            if char.isalpha():
+                # Convert the character to its corresponding assigned value
+                word_value = word_value * 10 + value_dict[char]
+        word_values.append(word_value)
+    
+    # Check if the sum of the first two words equals the third word
+    return word_values[0] + word_values[1] == word_values[2]
 
     
 
