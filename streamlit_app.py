@@ -1,6 +1,12 @@
+import simpleai
 import streamlit as st
+import sys
+import subprocess
 import re
 from simpleai.search import CspProblem, backtrack
+
+# implement pip as a subprocess:
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'simpleai'])
 
 # Set Streamlit page config
 st.set_page_config(layout="centered")
