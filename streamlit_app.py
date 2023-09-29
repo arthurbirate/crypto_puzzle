@@ -14,11 +14,11 @@ container.write("For example:")
 
 # formbtn = st.button("Form")
 
-if "formbtn_state" not in st.session_state:
-    st.session_state.formbtn_state = False
-if formbtn or st.session_state.formbtn_state:
-    st.session_state.formbtn_state = True
-    with st.form(key = 'user_info'):
+# if "formbtn_state" not in st.session_state:
+#     st.session_state.formbtn_state = False
+# if formbtn or st.session_state.formbtn_state:
+#     st.session_state.formbtn_state = True
+with st.form(key = 'user_info'):
         user_input = st.text_input("Enter Your Puzzle")
         new_input = re.split(r'\s+', user_input)
         submit_form = st.form_submit_button(label="Register", help="Click to register!")
