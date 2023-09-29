@@ -4,7 +4,7 @@ from simpleai.search import CspProblem, backtrack
 
 # Set Streamlit page config
 st.set_page_config(layout="centered")
-st.title("Cryptarithmetic  Puzzles 🧩")
+st.title("Cryptarithmetic Puzzles 🧩")
 st.divider()
 container = st.container()
 
@@ -14,18 +14,18 @@ container.write("For example:")
 
 formbtn = st.button("Try out your puzzle")
 
-# if "formbtn_state" not in st.session_state:
- 
-# if formbtn or st.session_state.formbtn_state:
- 
-with st.form(key = 'user_info'):
+if "formbtn_state" not in st.session_state:
+    st.session_state.formbtn_state = False
+if formbtn or st.session_state.formbtn_state:
+    st.session_state.formbtn_state = True
+    with st.form(key = 'user_info'):
             
         user_input = st.text_input("Enter Your Puzzle")
         new_input = re.split(r'\s+', user_input)
 
         submit_form = st.form_submit_button(label="launch", help="Click to submit !")
 
-        st.write(submit_form)
+        # st.write(submit_form)
 
 # Extract unique letters from the input
         def extract(input_user):
