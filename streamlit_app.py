@@ -4,7 +4,7 @@ from simpleai.search import CspProblem, backtrack
 
 # Set Streamlit page config
 st.set_page_config(layout="centered")
-st.title("Cryptarithmetic Puzzles 🧩")
+st.title("Cryptarithmetic  Puzzles 🧩")
 st.divider()
 container = st.container()
 
